@@ -1,0 +1,122 @@
+/********** RESET **********/
+html, body{
+	overflow: hidden;
+	background-color: #fff;
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 0px;
+  vertical-align: baseline;
+  font-family: sans-serif;
+ }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+a {
+  color: #222;
+  text-decoration: none;
+  cursor: pointer; }
+
+a:hover {
+  text-decoration: none; }
+
+ul, li {
+  list-style-type: none; }
+
+/***START***/
+
+.block{
+	display: block;
+	box-sizing: border-box;
+	height: 900px;
+	border-radius: 20px;
+	padding: 20px;
+	font-size: 20px;
+	color: #333;
+	-moz-transition:all 0.75s ease;
+	-webkit-transition:all 0.75s ease;
+	transition:all 0.75s ease;
+	-o-transition:all 0.75s ease;
+	-ms-transition:all 0.75s ease;
+
+}
+/*
+.block:hover{
+	opacity: 0.5;
+
+}
+*/
+
+.block:target > .content {
+	display: block;
+}
+
+.block:target ~ .block > .content {
+	display: none;
+}
+
+.block#freetime{
+	position: fixed;
+	top: 50px;
+	background-color: #FCE9D4;
+	width: 100%;
+	z-index: 10;
+}
+
+.block#freetime:target{
+	top: 50px;
+}
+
+
+.block#gate{
+	position: fixed;
+	top: 100px;
+	margin-top: 0px;
+	background-color: #F7BA7B;
+	width: 100%;
+	z-index: 100;
+}
+
+
+.block#freetime:target ~ .block#gate{
+	top: 100%;
+	margin-top: -100px;
+}
+
+.block#gate:target{
+	top: 100px;
+	margin-top: 0px;
+}
+
+.block#boardingpass{
+	position: fixed;
+	top: 100%;
+	margin-top: -50px;
+	background-color: #F28500;
+	width: 100%;
+	z-index: 1000;
+}
+
+.block#boardingpass:target{
+	top: 150px;
+	margin-top: 0px;
+}
+
+
+.block#boardingpass:target:parent.block#gate{
+	top: 100px;
+	margin-top: 0px;
+}
